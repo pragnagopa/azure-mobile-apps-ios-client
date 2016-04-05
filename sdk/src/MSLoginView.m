@@ -121,32 +121,17 @@ NSString *const MSLoginViewErrorResponseData = @"com.Microsoft.MicrosoftAzureMob
 
 #pragma mark * WKNavigationDelegate Private Implementation
 
-- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void (^)(WKNavigationActionPolicy))decisionHandler
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler
 {
-    WKNavigationActionPolicy shouldLoad = WKNavigationActionPolicyCancel;
-    
-    NSURL *requestURL = navigationAction.request.URL;
-    NSString *requestURLString = navigationAction.request.URL.absoluteString;
-    
-    // Now check if we've reached the end URL and we're done
-    if ([requestURLString rangeOfString:self.endURLString options:NSCaseInsensitiveSearch].location == 0) {
-        [self callCompletion:requestURL orError:nil];
+    WKNavigationActionPolicy shouldLoad = WKNavigationResponsePolicyAllow;
+    NSURL *navResponseURL = navigationResponse.response.URL;
+    NSString *responseURLString = navigationResponse.response.URL.absoluteString;
+    //Check if we've reached the end URL
+    if ([responseURLString rangeOfString:self.endURLString options:NSCaseInsensitiveSearch].location == 0) {
+        [self callCompletion:navResponseURL orError:nil];
+        shouldLoad = WKNavigationActionPolicyCancel;
     }
-    else {
-        
-        // Check if this request is to the Authentication URL path, and if so, make the request with
-        // the MSClientConnection so that we can inspect the response
-        NSString *appURLString = self.client.loginHost.absoluteString;
-        if ([self.currentURL isEqual:requestURL] ||
-            [requestURLString rangeOfString:appURLString].location != 0)
-        {
-            shouldLoad = WKNavigationActionPolicyAllow;
-        }
-        else {
-            [self makeRequest:navigationAction.request];
-        }
-    }
-    
+    //Continue until we reach end URL
     decisionHandler(shouldLoad);
 }
 
@@ -332,6 +317,7 @@ NSString *const MSLoginViewErrorResponseData = @"com.Microsoft.MicrosoftAzureMob
     NSDictionary *userInfo = @{
         MSErrorResponseKey:response
     };    
+    
     if(data){
       [userInfo setValue:data  forKey:MSLoginViewErrorResponseData];
     }
