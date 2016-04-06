@@ -5,21 +5,26 @@ echo $1
 export DEVICE_ARG=
 export DEVICE_CMD_ARG=$1
 
+# Check if Simulator is running
+if pgrep "Simulator" > /dev/null
+then
 killall "Simulator"
+echo "Waiting to kill simulator..."
+fi
 
 sleep 5
-
-echo "Waiting to kill simulator..."
 
 # Get the sim list with the UUIDs
 OUTPUT="$(xcrun simctl list)"
 # Parse out the UUIDs and saves them to file
 echo $OUTPUT | awk -F "[()]" '{ for (i=2; i<NF; i+=2) print $i }' | grep '^[-A-Z0-9]*$' > output.txt
 # Iterate through file and reset sim
+echo "Resetting Simulator..."
 for UUID in `awk '{ print $1 }' output.txt`
 do
 xcrun simctl erase $UUID
 done
+
 if [ "$DEVICE_CMD_ARG" == "iPad2Sim" ]; then
 echo Using iPad 2 Simulator
 export DEVICE_ARG=iPad\ 2\ \(9.1\)
@@ -89,13 +94,14 @@ if [ "$DEVICE_CMD_ARG" == "iPhoneSim6sPlusWatch" ]; then
 echo Using iPhone 6s Plus Simulator + Apple Watch
 export DEVICE_ARG=iPhone\ 6s\ Plus\ \(9.1\)\ +\ Apple\ Watch\ -\ 42mm\ \(2.0\)
 
+echo $DEVICE_ARG
 fi
 if [ "$DEVICE_ARG" == "" ]
 then
 echo Unsupported device: "$0"
 exit 1
 fi
-xcrun instruments -w "$DEVICE_ARG"
+instruments -w "$DEVICE_ARG"
 
-echo "waiting for device to boot.."
-sleep 30
+echo "waiting for simulator ...."
+sleep 60
