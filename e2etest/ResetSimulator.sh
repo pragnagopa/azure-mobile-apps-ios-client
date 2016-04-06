@@ -97,5 +97,5 @@ exit 1
 fi
 xcrun instruments -w "$DEVICE_ARG"
 
-echo "waiting for device to boot.."
-sleep 30
+echo "waiting for simulator...."
+sleep 60
