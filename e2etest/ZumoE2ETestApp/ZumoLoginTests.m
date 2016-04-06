@@ -43,15 +43,17 @@ static NSString *lastUserIdentityObjectKey = @"lastUserIdentityObject";
 
 + (NSArray *)createTests {
     NSMutableArray *result = [[NSMutableArray alloc] init];
-    [result addObject:[self createClearAuthCookiesTest]];
-    [result addObject:[self createLogoutTest]];
-    [result addObject:[self createCRUDTestForProvider:nil forTable:@"public" ofType:ZumoTableAnonymous andAuthenticated:NO]];
-    [result addObject:[self createCRUDTestForProvider:nil forTable:@"authenticated" ofType:ZumoTableAuthenticated andAuthenticated:NO]];
+    //[result addObject:[self createClearAuthCookiesTest]];
+    //[result addObject:[self createLogoutTest]];
+    //[result addObject:[self createCRUDTestForProvider:nil forTable:@"public" ofType:ZumoTableAnonymous andAuthenticated:NO]];
+    //[result addObject:[self createCRUDTestForProvider:nil forTable:@"authenticated" ofType:ZumoTableAuthenticated andAuthenticated:NO]];
     
     NSInteger indexOfLastUnattendedTest = [result count];
     
     NSArray *providers = @[ @"facebook", @"twitter", @"google", @"microsoftaccount", @"aad" ];
     NSArray *clientProviders = @[ @"facebook", @"twitter", @"microsoftaccount" ];
+    
+    //[result addObject:[self createLoginTestForProvider:@"facebook" usingSimplifiedMode:0]];
     
     for (int useSimplifiedLogin = 0; useSimplifiedLogin <= 1; useSimplifiedLogin++) {
         for (NSString *provider in providers) {
@@ -77,7 +79,7 @@ static NSString *lastUserIdentityObjectKey = @"lastUserIdentityObject";
         ZumoTest *test = result[i];
         [test setCanRunUnattended:NO];
     }
-    
+
     [result addObject:[self createLogoutTest]];
 
     return result;

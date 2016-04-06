@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0044609E1C84D96600CB5A0F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0044609D1C84D96600CB5A0F /* WebKit.framework */; };
+		00888FD01CB475E10061319C /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 00888FCD1CB475D40061319C /* MicrosoftAzureMobile.framework */; };
 		872B02BF1672A73B003613A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02BE1672A73B003613A1 /* UIKit.framework */; };
 		872B02C11672A73B003613A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02C01672A73B003613A1 /* Foundation.framework */; };
 		872B02C31672A73B003613A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02C21672A73B003613A1 /* CoreGraphics.framework */; };
@@ -37,12 +38,50 @@
 		A2B509E0199B376C00A914CF /* ZumoTestResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B509DF199B376C00A914CF /* ZumoTestResultViewController.m */; };
 		A2B509E4199C006600A914CF /* Main_iPhone.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B509E2199C006600A914CF /* Main_iPhone.Storyboard */; };
 		A2EB9E40199543E30032B8BC /* ZumoConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EB9E3F199543E30032B8BC /* ZumoConfigurationViewController.m */; };
-		A37A1C7A1C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37A1C791C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework */; };
 		A3AD0B6D1BED91F900288E3D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AD0B6C1BED91F900288E3D /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		00888FC61CB475D40061319C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00888FBD1CB475D30061319C /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8F33ADB1616659C002DD7C6;
+			remoteInfo = MicrosoftAzureMobile;
+		};
+		00888FC81CB475D40061319C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00888FBD1CB475D30061319C /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3EBDFF31BAC301400D82B10;
+			remoteInfo = MicrosoftAzureMobileFramework;
+		};
+		00888FCA1CB475D40061319C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00888FBD1CB475D30061319C /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8F33AEC1616659C002DD7C6;
+			remoteInfo = MicrosoftAzureMobileTests;
+		};
+		00888FCC1CB475D40061319C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00888FBD1CB475D30061319C /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3C0023A1AF7FF490028AB81;
+			remoteInfo = MicrosoftAzureMobile_Mac;
+		};
+		00888FCE1CB475D40061319C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 00888FBD1CB475D30061319C /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3C002441AF7FF4A0028AB81;
+			remoteInfo = MicrosoftAzureMobile_MacTests;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		0044609D1C84D96600CB5A0F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		00888FBD1CB475D30061319C /* MicrosoftAzureMobile.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MicrosoftAzureMobile.xcodeproj; path = ../sdk/MicrosoftAzureMobile.xcodeproj; sourceTree = "<group>"; };
 		872B02BA1672A73B003613A1 /* ZumoE2ETestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZumoE2ETestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872B02BE1672A73B003613A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		872B02C01672A73B003613A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,7 +137,6 @@
 		A2B509E2199C006600A914CF /* Main_iPhone.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.Storyboard; sourceTree = "<group>"; };
 		A2EB9E3E199543E30032B8BC /* ZumoConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZumoConfigurationViewController.h; sourceTree = "<group>"; };
 		A2EB9E3F199543E30032B8BC /* ZumoConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZumoConfigurationViewController.m; sourceTree = "<group>"; };
-		A37A1C791C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		A3AD0B6C1BED91F900288E3D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,8 +145,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00888FD01CB475E10061319C /* MicrosoftAzureMobile.framework in Frameworks */,
 				0044609E1C84D96600CB5A0F /* WebKit.framework in Frameworks */,
-				A37A1C7A1C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework in Frameworks */,
 				A2B509DD199ABF1A00A914CF /* MessageUI.framework in Frameworks */,
 				872B02BF1672A73B003613A1 /* UIKit.framework in Frameworks */,
 				872B02C11672A73B003613A1 /* Foundation.framework in Frameworks */,
@@ -119,9 +157,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		00888FBE1CB475D30061319C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				00888FC71CB475D40061319C /* libMicrosoftAzureMobile.a */,
+				00888FC91CB475D40061319C /* MicrosoftAzureMobile.framework */,
+				00888FCB1CB475D40061319C /* MicrosoftAzureMobile.xctest */,
+				00888FCD1CB475D40061319C /* MicrosoftAzureMobile.framework */,
+				00888FCF1CB475D40061319C /* MicrosoftAzureMobile.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		872B02AF1672A73B003613A1 = {
 			isa = PBXGroup;
 			children = (
+				00888FBD1CB475D30061319C /* MicrosoftAzureMobile.xcodeproj */,
 				872B02C41672A73B003613A1 /* ZumoE2ETestApp */,
 				872B02BD1672A73B003613A1 /* Frameworks */,
 				872B02BB1672A73B003613A1 /* Products */,
@@ -140,7 +191,6 @@
 			isa = PBXGroup;
 			children = (
 				0044609D1C84D96600CB5A0F /* WebKit.framework */,
-				A37A1C791C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework */,
 				A2B509DC199ABF1A00A914CF /* MessageUI.framework */,
 				872B02BE1672A73B003613A1 /* UIKit.framework */,
 				872B02C01672A73B003613A1 /* Foundation.framework */,
@@ -287,12 +337,56 @@
 			mainGroup = 872B02AF1672A73B003613A1;
 			productRefGroup = 872B02BB1672A73B003613A1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 00888FBE1CB475D30061319C /* Products */;
+					ProjectRef = 00888FBD1CB475D30061319C /* MicrosoftAzureMobile.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				872B02B91672A73B003613A1 /* ZumoE2ETestApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		00888FC71CB475D40061319C /* libMicrosoftAzureMobile.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMicrosoftAzureMobile.a;
+			remoteRef = 00888FC61CB475D40061319C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		00888FC91CB475D40061319C /* MicrosoftAzureMobile.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MicrosoftAzureMobile.framework;
+			remoteRef = 00888FC81CB475D40061319C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		00888FCB1CB475D40061319C /* MicrosoftAzureMobile.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MicrosoftAzureMobile.xctest;
+			remoteRef = 00888FCA1CB475D40061319C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		00888FCD1CB475D40061319C /* MicrosoftAzureMobile.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MicrosoftAzureMobile.framework;
+			remoteRef = 00888FCC1CB475D40061319C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		00888FCF1CB475D40061319C /* MicrosoftAzureMobile.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MicrosoftAzureMobile.xctest;
+			remoteRef = 00888FCE1CB475D40061319C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		872B02B81672A73B003613A1 /* Resources */ = {
