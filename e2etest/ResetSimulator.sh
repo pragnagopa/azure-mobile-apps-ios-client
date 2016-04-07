@@ -22,72 +22,72 @@ xcrun simctl erase $UUID
 done
 if [ "$DEVICE_CMD_ARG" == "iPad2Sim" ]; then
 echo Using iPad 2 Simulator
-export DEVICE_ARG=iPad\ 2\ \(9.1\)
+export DEVICE_ARG=iPad\ 2\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPadSimAir" ]; then
 echo Using iPad Air Simulator
-export DEVICE_ARG=iPad\ Air\ \(9.1\)
+export DEVICE_ARG=iPad\ Air\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPadSimAir2" ]; then
 echo Using iPad Air 2 Simulator
-export DEVICE_ARG=iPad\ Air\ 2\ \(9.1\)
+export DEVICE_ARG=iPad\ Air\ 2\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPadSimPro" ]; then
 echo Using iPad Pro Simulator
-export DEVICE_ARG=iPad\ Pro\ \(9.1\)
+export DEVICE_ARG=iPad\ Pro\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPadSimRetina" ]; then
 echo Using iPad Retina Simulator
-export DEVICE_ARG=iPad\ Retina\ \(9.1\)
+export DEVICE_ARG=iPad\ Retina\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim4s" ]; then
 echo Using iPhone 4s Simulator
-export DEVICE_ARG=iPhone\ 4s\ \(9.1\)
+export DEVICE_ARG=iPhone\ 4s\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim5" ]; then
 echo Using iPhone 5 Simulator
-export DEVICE_ARG=iPhone\ 5\ \(9.1\)
+export DEVICE_ARG=iPhone\ 5\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim5s" ]; then
 echo Using iPhone 5s Simulator
-export DEVICE_ARG=iPhone\ 5s\ \(9.1\)
+export DEVICE_ARG=iPhone\ 5s\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim6" ]; then
 echo Using iPhone 6 Simulator
-export DEVICE_ARG=iPhone\ 6\ \(9.1\)
+export DEVICE_ARG=iPhone\ 6\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim6Plus" ]; then
 echo Using iPhone 6 Plus Simulator
-export DEVICE_ARG=iPhone\ 6\ Plus\ \(9.1\)
+export DEVICE_ARG=iPhone\ 6\ Plus\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim6s" ]; then
 echo Using iPhone 6s Simulator
-export DEVICE_ARG=iPhone\ 6s\ \(9.1\)
+export DEVICE_ARG=iPhone\ 6s\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim6sWatch" ]; then
 echo Using iPhone 6s Simulator + Apple Watch
-export DEVICE_ARG=iPhone\ 6s\ \(9.1\)\ +\ Apple\ Watch\ -\ 38mm\ \(2.0\)
+export DEVICE_ARG=iPhone\ 6s\ \(9.3\)\ +\ Apple\ Watch\ -\ 38mm\ \(2.0\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim6sPlus" ]; then
 echo Using iPhone 6s Plus Simulator
-export DEVICE_ARG=iPhone\ 6s\ \(9.1\)
+export DEVICE_ARG=iPhone\ 6s\ \(9.3\)
 fi
 
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim6sPlusWatch" ]; then
 echo Using iPhone 6s Plus Simulator + Apple Watch
-export DEVICE_ARG=iPhone\ 6s\ Plus\ \(9.1\)\ +\ Apple\ Watch\ -\ 42mm\ \(2.0\)
+export DEVICE_ARG=iPhone\ 6s\ Plus\ \(9.3\)\ +\ Apple\ Watch\ -\ 42mm\ \(2.0\)
 
 fi
 if [ "$DEVICE_ARG" == "" ]
