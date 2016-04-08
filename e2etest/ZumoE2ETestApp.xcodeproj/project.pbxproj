@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0044609E1C84D96600CB5A0F /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0044609D1C84D96600CB5A0F /* WebKit.framework */; };
+		00539D7F1CB706D1003DBF16 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 007245261CB703420040BEC6 /* MicrosoftAzureMobile.framework */; };
+		00539D801CB706D1003DBF16 /* MicrosoftAzureMobile.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 007245261CB703420040BEC6 /* MicrosoftAzureMobile.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0072452F1CB7047B0040BEC6 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0072452E1CB7047B0040BEC6 /* MicrosoftAzureMobile.framework */; };
 		872B02BF1672A73B003613A1 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02BE1672A73B003613A1 /* UIKit.framework */; };
 		872B02C11672A73B003613A1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02C01672A73B003613A1 /* Foundation.framework */; };
 		872B02C31672A73B003613A1 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 872B02C21672A73B003613A1 /* CoreGraphics.framework */; };
@@ -37,12 +40,79 @@
 		A2B509E0199B376C00A914CF /* ZumoTestResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2B509DF199B376C00A914CF /* ZumoTestResultViewController.m */; };
 		A2B509E4199C006600A914CF /* Main_iPhone.Storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2B509E2199C006600A914CF /* Main_iPhone.Storyboard */; };
 		A2EB9E40199543E30032B8BC /* ZumoConfigurationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2EB9E3F199543E30032B8BC /* ZumoConfigurationViewController.m */; };
-		A37A1C7A1C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A37A1C791C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework */; };
 		A3AD0B6D1BED91F900288E3D /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3AD0B6C1BED91F900288E3D /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		00539D771CB706AB003DBF16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A4FAC5C1B050A870027011D;
+			remoteInfo = MicrosoftAzureMobileFramework;
+		};
+		00539D811CB706D1003DBF16 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5A4FAC5C1B050A870027011D;
+			remoteInfo = MicrosoftAzureMobileFramework;
+		};
+		007245231CB703420040BEC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8F33ADB1616659C002DD7C6;
+			remoteInfo = MicrosoftAzureMobile;
+		};
+		007245251CB703420040BEC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3EBDFF31BAC301400D82B10;
+			remoteInfo = MicrosoftAzureMobileFramework;
+		};
+		007245271CB703420040BEC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = E8F33AEC1616659C002DD7C6;
+			remoteInfo = MicrosoftAzureMobileTests;
+		};
+		007245291CB703420040BEC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3C0023A1AF7FF490028AB81;
+			remoteInfo = MicrosoftAzureMobile_Mac;
+		};
+		0072452B1CB703420040BEC6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F3C002441AF7FF4A0028AB81;
+			remoteInfo = MicrosoftAzureMobile_MacTests;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		00539D831CB706D2003DBF16 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				00539D801CB706D1003DBF16 /* MicrosoftAzureMobile.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0044609D1C84D96600CB5A0F /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = MicrosoftAzureMobile.xcodeproj; path = ../sdk/MicrosoftAzureMobile.xcodeproj; sourceTree = "<group>"; };
+		0072452E1CB7047B0040BEC6 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MicrosoftAzureMobile.framework; path = ../sdk/MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		872B02BA1672A73B003613A1 /* ZumoE2ETestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZumoE2ETestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		872B02BE1672A73B003613A1 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		872B02C01672A73B003613A1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -98,7 +168,6 @@
 		A2B509E2199C006600A914CF /* Main_iPhone.Storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main_iPhone.Storyboard; sourceTree = "<group>"; };
 		A2EB9E3E199543E30032B8BC /* ZumoConfigurationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZumoConfigurationViewController.h; sourceTree = "<group>"; };
 		A2EB9E3F199543E30032B8BC /* ZumoConfigurationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZumoConfigurationViewController.m; sourceTree = "<group>"; };
-		A37A1C791C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MicrosoftAzureMobile.framework; sourceTree = "<group>"; };
 		A3AD0B6C1BED91F900288E3D /* Launch Screen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,8 +176,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00539D7F1CB706D1003DBF16 /* MicrosoftAzureMobile.framework in Frameworks */,
 				0044609E1C84D96600CB5A0F /* WebKit.framework in Frameworks */,
-				A37A1C7A1C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework in Frameworks */,
+				0072452F1CB7047B0040BEC6 /* MicrosoftAzureMobile.framework in Frameworks */,
 				A2B509DD199ABF1A00A914CF /* MessageUI.framework in Frameworks */,
 				872B02BF1672A73B003613A1 /* UIKit.framework in Frameworks */,
 				872B02C11672A73B003613A1 /* Foundation.framework in Frameworks */,
@@ -119,9 +189,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0072451B1CB703410040BEC6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				007245241CB703420040BEC6 /* libMicrosoftAzureMobile.a */,
+				007245261CB703420040BEC6 /* MicrosoftAzureMobile.framework */,
+				007245281CB703420040BEC6 /* MicrosoftAzureMobile.xctest */,
+				0072452A1CB703420040BEC6 /* MicrosoftAzureMobile.framework */,
+				0072452C1CB703420040BEC6 /* MicrosoftAzureMobile.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		872B02AF1672A73B003613A1 = {
 			isa = PBXGroup;
 			children = (
+				0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */,
 				872B02C41672A73B003613A1 /* ZumoE2ETestApp */,
 				872B02BD1672A73B003613A1 /* Frameworks */,
 				872B02BB1672A73B003613A1 /* Products */,
@@ -139,8 +222,8 @@
 		872B02BD1672A73B003613A1 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0072452E1CB7047B0040BEC6 /* MicrosoftAzureMobile.framework */,
 				0044609D1C84D96600CB5A0F /* WebKit.framework */,
-				A37A1C791C04D1FB007A5BC2 /* MicrosoftAzureMobile.framework */,
 				A2B509DC199ABF1A00A914CF /* MessageUI.framework */,
 				872B02BE1672A73B003613A1 /* UIKit.framework */,
 				872B02C01672A73B003613A1 /* Foundation.framework */,
@@ -257,10 +340,13 @@
 				872B02B61672A73B003613A1 /* Sources */,
 				872B02B81672A73B003613A1 /* Resources */,
 				872B02B71672A73B003613A1 /* Frameworks */,
+				00539D831CB706D2003DBF16 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				00539D781CB706AB003DBF16 /* PBXTargetDependency */,
+				00539D821CB706D1003DBF16 /* PBXTargetDependency */,
 			);
 			name = ZumoE2ETestApp;
 			productName = ZumoE2ETestApp;
@@ -276,6 +362,11 @@
 				CLASSPREFIX = Zumo;
 				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = Microsoft;
+				TargetAttributes = {
+					872B02B91672A73B003613A1 = {
+						DevelopmentTeam = 55ADWADVV3;
+					};
+				};
 			};
 			buildConfigurationList = 872B02B41672A73B003613A1 /* Build configuration list for PBXProject "ZumoE2ETestApp" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -287,12 +378,56 @@
 			mainGroup = 872B02AF1672A73B003613A1;
 			productRefGroup = 872B02BB1672A73B003613A1 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 0072451B1CB703410040BEC6 /* Products */;
+					ProjectRef = 0072451A1CB703410040BEC6 /* MicrosoftAzureMobile.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				872B02B91672A73B003613A1 /* ZumoE2ETestApp */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		007245241CB703420040BEC6 /* libMicrosoftAzureMobile.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libMicrosoftAzureMobile.a;
+			remoteRef = 007245231CB703420040BEC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		007245261CB703420040BEC6 /* MicrosoftAzureMobile.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MicrosoftAzureMobile.framework;
+			remoteRef = 007245251CB703420040BEC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		007245281CB703420040BEC6 /* MicrosoftAzureMobile.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MicrosoftAzureMobile.xctest;
+			remoteRef = 007245271CB703420040BEC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0072452A1CB703420040BEC6 /* MicrosoftAzureMobile.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = MicrosoftAzureMobile.framework;
+			remoteRef = 007245291CB703420040BEC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		0072452C1CB703420040BEC6 /* MicrosoftAzureMobile.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = MicrosoftAzureMobile.xctest;
+			remoteRef = 0072452B1CB703420040BEC6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		872B02B81672A73B003613A1 /* Resources */ = {
@@ -339,6 +474,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		00539D781CB706AB003DBF16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MicrosoftAzureMobileFramework;
+			targetProxy = 00539D771CB706AB003DBF16 /* PBXContainerItemProxy */;
+		};
+		00539D821CB706D1003DBF16 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = MicrosoftAzureMobileFramework;
+			targetProxy = 00539D811CB706D1003DBF16 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		872B02C71672A73B003613A1 /* InfoPlist.strings */ = {
@@ -408,6 +556,8 @@
 		872B02D91672A73B003613A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development IOS Push Services: com.microsoft.azure.mobile.ZumoE2ETestApp";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -416,8 +566,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZumoE2ETestApp/ZumoE2ETestApp-Prefix.pch";
 				INFOPLIST_FILE = "ZumoE2ETestApp/ZumoE2ETestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.azure.mobile.ZumoE2ETestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};
@@ -426,6 +579,8 @@
 		872B02DA1672A73B003613A1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)",
@@ -434,8 +589,11 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "ZumoE2ETestApp/ZumoE2ETestApp-Prefix.pch";
 				INFOPLIST_FILE = "ZumoE2ETestApp/ZumoE2ETestApp-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.microsoft.azure.mobile.ZumoE2ETestApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				WRAPPER_EXTENSION = app;
 			};

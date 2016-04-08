@@ -111,8 +111,13 @@ fi
 if [ "$DEVICE_CMD_ARG" == "iPhoneSim6sPlusWatch" ]; then
 echo Using iPhone 6s Plus Simulator + Apple Watch
 export DEVICE_ARG=iPhone\ 6s\ Plus\ \(9.3\)\ +\ Apple\ Watch\ -\ 42mm\ \(2.0\)
-
 fi
+
+if [ "$DEVICE_CMD_ARG" == "zumoipad" ]; then
+echo Using Zumo IPad
+export DEVICE_ARG=Zumo\ Test\ Team\ iPad\ 1\ \(9.3.1\)
+fi
+
 if [ "$DEVICE_ARG" == "" ]
 then
 echo Unsupported device: "$2"

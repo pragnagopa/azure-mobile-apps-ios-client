@@ -134,15 +134,8 @@ static NSString *pushClientKey = @"PushClientKey";
     [result addObject:[self createRegisterLoginTest]];
     
     if (!isSimulator) {
-        [result addObject:[self createPushTestWithName:@"Push simple alert" forPayload:@{@"alert":@"push received"} withDelay:0]];
-        [result addObject:[self createPushTestWithName:@"Push simple badge" forPayload:@{@"badge":@9} withDelay:0]];
-        [result addObject:[self createPushTestWithName:@"Push simple sound and alert" forPayload:@{@"alert":@"push received",@"sound":@"default"} withDelay:0]];
-        [result addObject:[self createPushTestWithName:@"Push alert with loc info and parameters" forPayload:@{@"alert":@{@"loc-key":@"LOC_STRING",@"loc-args":@[@"first",@"second"]}} withDelay:0]];
-        [result addObject:[self createPushTestWithName:@"Push with only custom info (no alert / badge / sound)" forPayload:@{@"aps":@{},@"foo":@"bar"} withDelay:0]];
-        [result addObject:[self createPushTestWithName:@"Push with alert, badge and sound" forPayload:@{@"aps":@{@"alert":@"simple alert", @"badge":@7, @"sound":@"default"},@"custom":@"value"} withDelay:0]];
-        [result addObject:[self createPushTestWithName:@"Push with alert with non-ASCII characters" forPayload:@{@"alert":@"Latin-ãéìôü ÇñÑ, arabic-لكتاب على الطاولة, chinese-这本书在桌子上"} withDelay:0]];
+        [result addObject:[self createPushTestWithName:@"Push simple alert" forPayload:@{ @"aps": @{ @"alert": @"push received" } }  withDelay:0]];
         
-        [result addObject:[self createPushTestWithName:@"(Neg) Push with large payload" forPayload:@{@"alert":[@"" stringByPaddingToLength:256 withString:@"*" startingAtIndex:0]} withDelay:0 isNegativeTest:YES]];
     }
     
     return result;
@@ -216,23 +209,22 @@ static NSString *pushClientKey = @"PushClientKey";
     ZumoTestExecution testExecution = ^(ZumoTest *test, UIViewController *viewController, ZumoTestCompletion completion) {
         MSClient *client = [[ZumoTestGlobals sharedInstance] client];
         NSData *deviceToken = [[ZumoTestGlobals sharedInstance] deviceToken];
-        __block TestStatus overallTestStatus = TSPassed;
         
-        // Confirm the registration has been removed from the server
-        MSAPIBlock verifyUnregister = ^(id result, NSHTTPURLResponse *response, NSError *error) {
+        MSAPIBlock checkVerifyUnregister = ^(id result, NSHTTPURLResponse *response, NSError *error) {
             if (error) {
                 [test addLog:[NSString stringWithFormat:@"Verification error: %@", error.localizedDescription]];
-                overallTestStatus = TSFailed;
+                completion(NO);
+                return;
             }
-            completion(overallTestStatus == TSPassed);
+            completion(test.testStatus != TSFailed);
         };
         
-        // Now attemp to unregister the installation
-        MSCompletionBlock unregisterInstallation = ^(NSError *error) {
+        MSCompletionBlock verifyUnregister = ^(NSError *error) {
             // Verify unregister succeeded
             if (error) {
-                [test addLog:[NSString stringWithFormat:@"Error unregistering: %@", error.localizedDescription]];
+                [test addLog:[NSString stringWithFormat:@"Error unregistering: %@", error.description]];
                 test.testStatus = TSFailed;
+                
                 completion(NO);
                 return;
             }
@@ -242,51 +234,35 @@ static NSString *pushClientKey = @"PushClientKey";
                    HTTPMethod:@"GET"
                    parameters:nil
                       headers:nil
-                   completion:verifyUnregister];
+                   completion:checkVerifyUnregister];
         };
         
-        // Verify that the registration did have the expected format
-        MSAPIBlock checkVerifyReg = ^(id result, NSHTTPURLResponse *response, NSError *error) {
+        MSAPIBlock verifyRegister = ^(id result, NSHTTPURLResponse *response, NSError *error) {
             if (error) {
                 [test addLog:[NSString stringWithFormat:@"Verification error: %@", error.localizedDescription]];
-                overallTestStatus = TSFailed;
-            }
-            
-            [client.push unregisterWithCompletion:unregisterInstallation];
-        };
-        
-        MSCompletionBlock verifyRegister = ^(NSError *error) {
-            // Verify register call succeeded
-            if (error) {
-                [test addLog:[NSString stringWithFormat:@"Error registering: %@", error.description]];
                 test.testStatus = TSFailed;
-                completion(NO);
-                return;
             }
             
-            [client invokeAPI:@"verifyRegisterInstallationResult"
-                         body:nil
-                   HTTPMethod:@"GET"
-                   parameters:@{ @"channelUri" : [ZumoPushTests convertDeviceToken:deviceToken] }
-                      headers:nil
-                   completion:checkVerifyReg];
+            [client.push unregisterWithCompletion:verifyUnregister];
         };
         
-        MSAPIBlock registerToken = ^(id result, NSHTTPURLResponse *response, NSError *error) {
-            if (error) {
-                [test addLog:[NSString stringWithFormat:@"Cleanup failed: %@", error.localizedDescription]];
-                test.testStatus = TSFailed;
-                completion(NO);
-                return;
-            }
-            
-            // Create a new registration on the server
-            [client.push registerDeviceToken:deviceToken completion:verifyRegister];
-        };
-        
-        [client invokeAPI:@"DeleteRegistrationsForChannel" body:nil HTTPMethod:@"DELETE"
-               parameters:@{ @"channelUri": [ZumoPushTests convertDeviceToken:deviceToken] }
-                  headers:nil completion:registerToken];
+        [client.push registerDeviceToken:deviceToken
+                              completion:^(NSError *error) {
+                                  // Verify register call succeeded
+                                  if (error) {
+                                      [test addLog:[NSString stringWithFormat:@"Encountered error registering with Mobile Service: %@", error.description]];
+                                      [test setTestStatus:TSFailed];
+                                      completion(NO);
+                                      return;
+                                  }
+                                  
+                                  [client invokeAPI:@"verifyRegisterInstallationResult"
+                                               body:nil
+                                         HTTPMethod:@"GET"
+                                         parameters:@{ @"channelUri" : [ZumoPushTests convertDeviceToken:deviceToken]}
+                                            headers:nil
+                                         completion:verifyRegister];
+                              }];
     };
     
     return[ZumoTest createTestWithName:@"RegisterUnregister" andExecution:testExecution];
