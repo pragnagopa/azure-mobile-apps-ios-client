@@ -123,13 +123,13 @@ NSString *const MSLoginViewErrorResponseData = @"com.Microsoft.MicrosoftAzureMob
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationResponse:(WKNavigationResponse *)navigationResponse decisionHandler:(void (^)(WKNavigationResponsePolicy))decisionHandler
 {
-    WKNavigationActionPolicy shouldLoad = WKNavigationResponsePolicyAllow;
+    WKNavigationResponsePolicy shouldLoad = WKNavigationResponsePolicyAllow;
     NSURL *navResponseURL = navigationResponse.response.URL;
     NSString *responseURLString = navigationResponse.response.URL.absoluteString;
     //Check if we've reached the end URL
     if ([responseURLString rangeOfString:self.endURLString options:NSCaseInsensitiveSearch].location == 0) {
         [self callCompletion:navResponseURL orError:nil];
-        shouldLoad = WKNavigationActionPolicyCancel;
+        shouldLoad = WKNavigationResponsePolicyCancel;
     }
     //Continue until we reach end URL
     decisionHandler(shouldLoad);
@@ -252,22 +252,6 @@ NSString *const MSLoginViewErrorResponseData = @"com.Microsoft.MicrosoftAzureMob
 
 
 #pragma mark * Private NSError Generation Methods
-
-
--(NSError *) errorForLoginViewFailedWithResponse:(NSURLResponse *)response
-                                         andData:(NSData *)data
-{
-    NSDictionary *userInfo = @{
-        MSErrorResponseKey:response
-    };    
-    
-    if(data){
-      [userInfo setValue:data  forKey:MSLoginViewErrorResponseData];
-    }
-    return [self errorWithDescriptionKey:@"The login operation failed."
-                            andErrorCode:MSLoginViewFailed
-                             andUserInfo:userInfo];
-}
 
 -(NSError *) errorForLoginViewCanceled
 {
