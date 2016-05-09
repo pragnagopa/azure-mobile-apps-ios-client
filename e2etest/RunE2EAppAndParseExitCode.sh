@@ -8,8 +8,8 @@ if [[ "$RunE2EAppOutput" == *"disengage"* ]]; then
 exit 1
 fi
 
-if [[ "$RunE2EAppOutput" == *"exit 1"* ]]; then
-echo "fail exit";
+if [[ "$RunE2EAppOutput" != *"exit 0"* ]]; then
+exit 1
 fi
 
 if [[ "$RunE2EAppOutput" == *"Script threw an uncaught"* ]]; then
